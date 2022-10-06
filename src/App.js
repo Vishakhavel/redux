@@ -1,16 +1,17 @@
 import './App.css'
 import { Fragment } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { actions } from './store'
 
 function App() {
   const counter = useSelector((state) => state.counter)
   const dispatch = useDispatch()
 
   const incrementCounter = () => {
-    dispatch({ type: 'INC' })
+    dispatch(actions.increment)
   }
   const decrementCounter = () => {
-    dispatch({ type: 'DEC' })
+    dispatch(actions.decrement)
   }
   return (
     <Fragment>
